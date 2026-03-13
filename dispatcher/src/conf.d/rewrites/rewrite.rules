@@ -7,10 +7,6 @@
 
 Include conf.d/rewrites/default_rewrite.rules
 
-#fifth part
-RewriteMap toLower int:tolower
-RewriteCond %{REQUEST_URI} [A-Z]
-RewriteRule ^(.*)$ ${toLower:$1} [PT]
 
 # rewrite for root redirect
 RewriteRule ^/?$ /content/${CONTENT_FOLDER_NAME}/us/en.html [PT,L]
