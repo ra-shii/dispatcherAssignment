@@ -22,25 +22,6 @@ Include conf.d/variables/custom.vars
 	# Add header breadcrumbs for help in troubleshooting
 	<IfModule mod_headers.c>
 		Header add X-Vhost "publish"
-<LocationMatch "\.html$">
-    Header unset Cache-Control
-    Header set Cache-Control "max-age=600, public"
-</LocationMatch>
-
-<LocationMatch "/etc.clientlibs/.*\.css$">
-    Header unset Cache-Control
-    Header set Cache-Control "max-age=172800, public"
-</LocationMatch>
-
-<LocationMatch "/etc.clientlibs/.*\.js$">
-    Header unset Cache-Control
-    Header set Cache-Control "max-age=172800, public"
-</LocationMatch>
-
-<LocationMatch "\.lc-.*\.(css|js)$">
-    Header unset Cache-Control
-    Header set Cache-Control "max-age=2592000, public"
-</LocationMatch>
 
 	</IfModule>
 	<Directory />
