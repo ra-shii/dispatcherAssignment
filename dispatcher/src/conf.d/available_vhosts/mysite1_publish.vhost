@@ -23,6 +23,25 @@ Include conf.d/variables/custom.vars
 	<IfModule mod_headers.c>
 		Header add X-Vhost "publish"
 
+#third part
+Header always set Content-Security-Policy "script-src 'self' https://code.jquery.com https://cdnjs.cloudflare.com"
+
+#fourth part
+<FileMatch "\.html$">
+  Header set Cache-Control "max-age=600, public"
+</FileMatch>
+
+<LocationMatch "/etc.clientlibs/.*\.css$">
+  Header set Cache-Control "max-age=172800, public"
+</LocationMatch>
+
+<LocationMatch "/etc.clientlibs/.*\.js$">
+  Header set Cache-Control "max-age=172800, public"
+</LocationMatch>
+
+<LocationMatch "\.lc-.*\.(css|js)$">
+  Header set Cache-Control "max-age=2592000, public"
+</LocationMatch>
 
 	</IfModule>
 	<Directory />
