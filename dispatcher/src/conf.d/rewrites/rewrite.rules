@@ -7,6 +7,10 @@
 
 Include conf.d/rewrites/default_rewrite.rules
 
+ #fifth part
+RewriteMap toLower int:tolower
+RewriteCond %{REQUEST_URI} [A-Z]
+RewriteRule ^(.*)$ ${toLower:$1} [PT]
 
 # rewrite for root redirect
 RewriteRule ^/?$ /content/${CONTENT_FOLDER_NAME}/us/en.html [PT,L]
@@ -25,3 +29,8 @@ RewriteCond %{REQUEST_URI} !^/conf/(.+\.jpe?g|.+\.png|.+\.svg)$
 RewriteCond %{REQUEST_URI} (.html|.jpe?g|.png|.svg)$
 RewriteRule ^/(.*)$ /content/${CONTENT_FOLDER_NAME}/$1 [PT,L]
 
+#second part
+RewriteCond %{REQUEST_URI} ^/articles/([^/]+)$
+RewriteCond %{QUERY_STRING} ^lang=([a-z]{2})&region=([a-z]{2})$
+RewriteRule ^/articles/([^/]+)$ /content/mysite1/%2/%1/blogs/$1.html? [R=301,L]
+RewriteRule ^/articles/([^/]+)$ /content/mysite1/us/en/blogs/$1.html [R=301,L]

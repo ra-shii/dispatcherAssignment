@@ -1,0 +1,15 @@
+<div>
+    <h2>CSP Demo</h2>
+
+    <p id="jquery-status">Trusted Script: BLOCKED</p>
+    <p id="lodash-status">Untrusted Script: BLOCKED</p>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+
+    <script>
+        if (window.jQuery) document.getElementById("jquery-status").innerText = "Trusted Script: ALLOWED";
+        if (window._) document.getElementById("lodash-status").innerText = "Untrusted Script: ALLOWED";
+    </script>
+
+</div>
