@@ -19,7 +19,7 @@ import java.io.IOException;
         extensions = "json"
 )
 @ServiceDescription("Products API Servlet")
-public class DemoServlet extends SlingSafeMethodsServlet {
+public class DispatcherServlet extends SlingSafeMethodsServlet {
 
     private static final long serialVersionUID = 1L;
 
