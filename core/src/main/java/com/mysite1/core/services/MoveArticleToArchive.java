@@ -1,0 +1,5 @@
+package com.mysite1.core.services;
+
+public interface MoveArticleToArchive {
+    boolean archiveArticle(String articlePath);
+}
