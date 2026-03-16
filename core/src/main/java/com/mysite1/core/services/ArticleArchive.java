@@ -18,12 +18,12 @@ public @interface ArticleArchive {
     @AttributeDefinition(
             name = "News Root Path"
     )
-    String news_root() default "/content/kaltak/en/news";
+    String news_root() default "/content/newshun/en/news";
 
     @AttributeDefinition(
             name = "Archive Root Path"
     )
-    String archive_root() default "/content/kaltak/en/archive";
+    String archive_root() default "/content/newshub/en/archive";
 
     @AttributeDefinition(
             name = "Archive After Days"

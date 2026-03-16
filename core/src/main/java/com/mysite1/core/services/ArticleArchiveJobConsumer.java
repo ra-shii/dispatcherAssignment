@@ -22,19 +22,15 @@ import com.day.cq.search.result.*;
 )
 @Designate(ocd = ArticleArchive.class)
 public class ArticleArchiveJobConsumer implements JobConsumer {
-
     private static final Logger LOG =
             LoggerFactory.getLogger(ArticleArchiveJobConsumer.class);
-
     private static final String SUBSERVICE = "content-writer";
 
     @Reference
     private ResourceResolverFactory resolverFactory;
-
     @Reference
     private QueryBuilder queryBuilder;
-
-    private ArticleArchive;
+    private ArticleArchive config;
 
     @Activate
     @Modified
